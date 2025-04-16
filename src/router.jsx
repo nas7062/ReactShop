@@ -4,6 +4,7 @@ import { lazy, Suspense } from 'react'
 import Default from './layout/Default'
 import NotFound from './pages/NotFound'
 import Loading from './components/Loading'
+import DetailPage from './pages/DetailPage'
 
 const MainPage = lazy(() => import('./pages/MainPage'))
 const AboutPage = lazy(() => import('./pages/AboutPage'))
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
       { path: '/about', element: <AboutPage /> },
       { path: '/blog', element: <BlogPage /> },
       { path: '/cart', element: <CartPage /> },
+      { path: '/detail/:productId', element: <DetailPage /> },
     ],
   },
   {

@@ -5,8 +5,6 @@ import Logo from '../components/Logo'
 const Header = () => {
   const [isOn, setIsOn] = useState(false)
   const location = useLocation()
-  console.log(location)
-  console.log(location.pathname)
 
   const addClassOn = () => {
     setIsOn(!isOn)

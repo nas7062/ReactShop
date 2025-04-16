@@ -9,7 +9,6 @@
   z-index: 99999;
 }
 .con {
-  border: 1px solid red;
   max-width: 1200px;
   width: calc(100% - 4rem);
   margin: auto;
@@ -35,7 +34,6 @@
 }
 .gnb nav a {
   font-size: var(--fs20);
-  border: 2px solid tomato;
   position: relative;
 }
 .gnb nav a::before {

@@ -1,0 +1,89 @@
+.listContainer {
+  align-items: center;
+  gap: var(--fs33);
+  justify-content: space-between;
+  position: relative;
+}
+
+.list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: var(--fs20);
+}
+
+.list > li {
+  border: 1px solid gray;
+}
+
+.more {
+  font-size: var(--fs20);
+  transition: color 0.3;
+}
+
+.more:hover {
+  color: var(--dark-colors-accent-dark);
+}
+
+.more::after {
+  content: '\F138';
+  font-family: 'bootstrap-icons';
+  display: inline-block;
+  transition: transform 0.3;
+  position: relative;
+  top: 2px;
+}
+
+.more:hover::after {
+  transform: translateX(5px);
+}
+
+.selectList {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--fs20);
+}
+
+.selectList > select {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  font-size: var(--fs20);
+}
+@media (max-width: 600px) {
+  .list {
+    grid-template-columns: repeat(auto-fill, 1fr);
+  }
+}
+
+.skeleton {
+  width: 100%;
+  height: 500px;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  /* animation: shimmer 2s; */
+  animation-name: pulse;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
+  /* animation-fill-mode: both; */
+  /* animation-direction: alternate; */
+  animation-iteration-count: infinite;
+  transform: translateX(0%);
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #f0f0f0;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
+}
