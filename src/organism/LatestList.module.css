@@ -12,11 +12,7 @@
   gap: var(--fs20);
 }
 
-.list > li {
-  border: 1px solid gray;
-}
-
-.more {
+    .more {
   font-size: var(--fs20);
   transition: color 0.3;
 }
