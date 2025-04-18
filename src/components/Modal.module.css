@@ -1,0 +1,89 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.141);
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+}
+
+.container {
+  background-color: white;
+  transform: translateY(-200px);
+  opacity: 0;
+  transition:
+    transform 0.5s,
+    opacity 0.2s;
+  padding: var(--fs33);
+  border-radius: var(--fs16);
+  width: 30%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.508);
+}
+
+.modal.active .container {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.btnClose {
+  position: absolute;
+  right: 0;
+  top: -30px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: var(--fs20);
+}
+
+.btnClose:hover {
+  color: white;
+}
+
+.container h2 {
+  text-align: center;
+}
+
+.content {
+  display: flex;
+}
+
+.imgWrap {
+  width: 40%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.456);
+}
+
+.content img {
+  width: 100%;
+  border-radius: var(--fs12);
+  object-fit: cover;
+}
+.infoWrap {
+  margin-top: 5%;
+  flex: 1;
+  text-align: center;
+}
+.btnArea {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: var(--fs33);
+  gap: var(--fs64);
+}
+
+.btnArea button {
+  outline: none;
+  border: none;
+  padding: var(--fs12) var(--fs16);
+}
+.btnArea button:nth-of-type(2) {
+  background-color: var(--dark-colors-accent-dark);
+  color: white;
+  transition: 0.1s ease;
+}
+.btnArea button:nth-of-type(2):hover {
+  background-color: var(--dark-colors-black-dark);
+}

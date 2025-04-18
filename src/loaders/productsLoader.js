@@ -12,7 +12,7 @@ export const detailPageLoader = async info => {
       })
     }
 
-    const relatiedProducts = await getProductByCategory(product.category, 3)
+    const relatiedProducts = await getProductByCategory(product.category, 10)
     if (!relatiedProducts) {
       throw new Response('[ERROR] 상품 카테고리 에러 ', {
         status: 404,
