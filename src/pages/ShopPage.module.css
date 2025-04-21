@@ -4,10 +4,6 @@
   gap: var(--fs33);
 }
 
-.shopPage > * {
-  border: 1px solid red;
-}
-
 .shopPage h2 {
   width: 100%;
 }
@@ -44,9 +40,13 @@
 
 .sortHeader {
   background-color: var(--dark-colors-white-dark);
-  padding: var(--fs12);
+  padding: var(--fs8);
   border-radius: var(--fs8);
   position: relative;
+}
+.sortHeader p {
+  position: relative;
+  top: 10px;
 }
 
 .sortHeader i {
@@ -59,7 +59,7 @@
 .sort ul {
   max-height: 0;
   overflow: hidden;
-  transition: 0.5;
+  transition: 0.5s;
   width: 100%;
   background-color: var(--dark-colors-white-dark);
   margin-top: var(--fs8);
@@ -152,6 +152,6 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    left: -15px;    
+    left: -15px;
   }
 }

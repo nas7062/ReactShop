@@ -42,19 +42,11 @@
   text-align: right;
 }
 
-.btnArea span {
-  display: inline-block;
-  width: 50px;
-  text-align: center;
-}
-
 .btnArea > * {
   background-color: var(--dark-colors-light-gray-dark);
 }
 
 .btnArea > button {
-  border: none;
-  outline: none;
   padding: var(--fs8) var(--fs16);
   font-size: var(--fs20);
   transition: 0.3s;

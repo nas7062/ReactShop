@@ -18,7 +18,9 @@ export const detailPageLoader = async info => {
         status: 404,
       })
     }
-    return { product, relatiedProducts }
+    const filteredRelatedProducts = relatiedProducts.filter(p => p.id !== product.id)
+
+    return { product, filteredRelatedProducts }
   } catch (error) {
     console.log('[ERROR] 상품 데이터 가져오는 중 오류')
     throw new Response('[ERROR] 상품 데이터 가져오는 중 오류', {

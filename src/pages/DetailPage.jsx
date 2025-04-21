@@ -7,7 +7,7 @@ import SimilarProducts from '@/organism/SimilarProducts'
 import Modal from '@/components/Modal'
 
 const DetailPage = () => {
-  const { product, relatiedProducts } = useLoaderData()
+  const { product, filteredRelatedProducts } = useLoaderData()
   const [isLoading, setIsLoading] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [count, setCount] = useState(1)
@@ -61,7 +61,7 @@ const DetailPage = () => {
         </div>
       </div>
       <DetailTabInfo />
-      <SimilarProducts products={relatiedProducts} />
+      <SimilarProducts products={filteredRelatedProducts} />
       {isModalOpen && <Modal product={product} count={count} onClose={closeModal} />}
     </main>
   )
