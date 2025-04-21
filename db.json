@@ -184,25 +184,7 @@
       "price": 185000,
       "category": "new",
       "discount": 5,
-      "count": 7
-    },
-    {
-      "id": "17",
-      "title": "test7",
-      "img": "image7.jpg",
-      "price": 19000,
-      "category": "top",
-      "discount": 7,
-      "count": 3
-    },
-    {
-      "id": "6",
-      "title": "14k/18k 티얼스 라운드 큐빅 여성 체인 목걸이",
-      "img": "image6.jpg",
-      "price": 310000,
-      "category": "top",
-      "discount": 5,
-      "count": 3
+      "count": 1
     }
   ]
 }

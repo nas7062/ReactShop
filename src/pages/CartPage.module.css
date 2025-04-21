@@ -1,0 +1,132 @@
+.cartList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs12);
+  margin: var(--fs33) auto;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--fs12);
+  border-radius: var(--fs12);
+  padding: var(--fs12);
+  background-color: var(--light-colors-white-light);
+  box-shadow: 0 0 5px var(--dark-colors-light-gray-dark);
+}
+
+.cartImg {
+  border-radius: var(--fs12);
+  overflow: hidden;
+  width: 100px;
+}
+.cartImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  flex: 1;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.title:hover {
+  font-weight: bold;
+}
+.price,
+.sum {
+  width: 120px;
+  text-align: right;
+}
+
+.btnArea span {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+}
+
+.btnArea > * {
+  background-color: var(--dark-colors-light-gray-dark);
+}
+
+.btnArea > button {
+  border: none;
+  outline: none;
+  padding: var(--fs8) var(--fs16);
+  font-size: var(--fs20);
+  transition: 0.3s;
+}
+
+.btnArea > button:hover {
+  background-color: var(--dark-colors-dark-gray-dark);
+  color: white;
+}
+
+.btnArea > span {
+  display: inline-block;
+  padding: var(--fs8) var(--fs16);
+  font-size: var(--fs20);
+}
+
+.deleteBtn {
+  padding: var(--fs12);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.deleteBtn:hover i {
+  color: var(--light-colors-errors-light);
+}
+
+.totalArea {
+  float: right;
+  font-size: var(--fs20);
+}
+
+@media (max-width: 900px) {
+  .cartItem {
+    display: grid;
+    grid-template-columns: 1fr 1fr 50px;
+    grid-template-rows: repeat(4, 1fr);
+  }
+  .cartImg {
+    grid-column: 1/2;
+    grid-row: 1/5;
+    width: 100%;
+    height: 100%;
+  }
+  .title,
+  .price,
+  .sum {
+    grid-column: 2/4;
+    width: 100%;
+  }
+  .btnArea {
+    order: 1;
+    display: flex;
+    justify-content: center;
+  }
+  .deleteBtn {
+    order: 5;
+  }
+}
+
+@media (max-width: 600px) {
+  .cartItem {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .cartItem > div {
+    width: 100%;
+  }
+  .cartItem > .btnArea {
+    width: calc(100% - 80px);
+  }
+  .cartItem .deleteBtn {
+    width: 50px;
+  }
+}
