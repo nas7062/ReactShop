@@ -11,12 +11,6 @@ const HeroSlider = () => {
   const [banner, setBanner] = useState([])
   const [Loading, setLoading] = useState(false)
   useEffect(() => {
-    // 배너 데이터를 가져오기 전에 미리 첫 번째 이미지 프리로드
-    const preloadFirstImage = () => {
-      const img = new Image()
-      img.src = '/public/vite.svg' // 첫 번째 이미지 경로를 알고 있다면 직접 지정
-    }
-    preloadFirstImage()
     const fetchBanner = async () => {
       try {
         setLoading(true)
@@ -25,7 +19,7 @@ const HeroSlider = () => {
         setBanner(data)
         setLoading(false)
       } catch (err) {
-        console.log('err----', err)
+        console.log('bannerData', err)
         setLoading(false)
       }
     }
@@ -33,7 +27,7 @@ const HeroSlider = () => {
   }, [])
   return (
     <section>
-      <h2 hidden>EventBanner</h2>
+      <h2 className="sr-only">EventBanner</h2>
       <Swiper pagination={{ clickable: true }} modules={[Pagination]} className={styles.mainSlider}>
         {Loading ? (
           <SwiperSlide>
