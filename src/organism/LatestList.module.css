@@ -1,7 +1,4 @@
 .listContainer {
-  align-items: center;
-  gap: var(--fs33);
-  justify-content: space-between;
   position: relative;
 }
 
@@ -44,7 +41,7 @@
   width: 100px;
   height: 30px;
   text-align: center;
-  font-size: var(--fs20);
+  font-size: var(--fs16);
 }
 @media (max-width: 600px) {
   .list {

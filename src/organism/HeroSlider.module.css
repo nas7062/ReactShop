@@ -74,7 +74,7 @@
     transform: translateX(100%);
   }
 }
-
+/*페이지 네이션*/
 .mainSlider > div:nth-of-type(2) {
   bottom: 55px;
 }

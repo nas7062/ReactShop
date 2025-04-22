@@ -33,7 +33,7 @@ const LatestList = () => {
 
   return (
     <section className={styles.listContainer}>
-      <h2>Shop The Latest</h2>
+      <h2 className="sr-only">Shop The Latest</h2>
       <div className={styles.selectList}>
         <Link to={'/shop'} className={styles.more}>
           View All
