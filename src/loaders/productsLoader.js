@@ -1,4 +1,4 @@
-import { getProductByCategory, getProductById } from '../api/ProductApi '
+import { getProductByCategory, getProductById, getProductData } from '../api/ProductApi '
 
 export const detailPageLoader = async info => {
   try {
@@ -26,5 +26,24 @@ export const detailPageLoader = async info => {
     throw new Response('[ERROR] 상품 데이터 가져오는 중 오류', {
       status: error.status || 500,
     })
+  }
+}
+
+export const shopPageLoader = async ({ request }) => {
+  console.log(request.url)
+  const url = new URL(request.url)
+  const page = url.searchParams.get('_page') || 1
+  const per_page = url.searchParams.get('_per_page') || 12
+  const category = url.searchParams.get('category') || ''
+  const sort = url.searchParams.get('_sort') || ''
+  let queryString = `_page=${page}&_per_page=${per_page}`
+  if (category) queryString += `&category=${category}`
+  if (sort) queryString += `&_sort=${sort}`
+
+  try {
+    const products = await getProductData(queryString)
+    return { products, per_page }
+  } catch (error) {
+    console.log('shopPageData', error)
   }
 }

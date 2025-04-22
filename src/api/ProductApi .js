@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const getProductData = async (query = '') => {
   try {
-    const response = await axios.get(`/api/products/?=${query}`)
+    const response = await axios.get(`/api/products?${query}`)
     return response.data
   } catch (error) {
     console.log('ProductData', error)

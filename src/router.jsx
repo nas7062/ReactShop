@@ -3,7 +3,7 @@ import { lazy, Suspense } from 'react'
 import Default from './layout/Default'
 import NotFound from './pages/NotFound'
 import DetailPage from './pages/DetailPage'
-import { detailPageLoader } from './loaders/productsLoader'
+import { detailPageLoader, shopPageLoader } from './loaders/productsLoader'
 import { cartPageLoader } from './loaders/cartsLoader'
 
 const MainPage = lazy(() => import('./pages/MainPage'))
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       { path: '', element: <MainPage /> },
-      { path: '/shop', element: <ShopPage /> },
+      { path: '/shop', element: <ShopPage />, loader: shopPageLoader },
       { path: '/about', element: <AboutPage /> },
       { path: '/blog', element: <BlogPage /> },
       { path: '/cart', element: <CartPage />, loader: cartPageLoader },
