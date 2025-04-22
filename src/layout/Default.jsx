@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../organism/Header'
 import Footer from '../organism/Footer'
-import { Outlet } from 'react-router-dom'
+import { Outlet, ScrollRestoration } from 'react-router-dom'
 import { Suspense } from 'react'
 const Default = () => {
   return (
@@ -10,6 +10,7 @@ const Default = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
+      <ScrollRestoration scrollBehavior="auto" />
       <Footer />
     </>
   )

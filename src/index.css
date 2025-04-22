@@ -68,3 +68,8 @@ button {
   border: none;
   outline: none;
 }
+
+html,
+body {
+  scroll-behavior: auto !important;
+}
