@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 import styles from './ShopPage.module.css'
-import { useLoaderData, useNavigate, useSearchParams } from 'react-router-dom'
+import { useLoaderData, useSearchParams } from 'react-router-dom'
 import ProductCard from '@/components/ProductCard'
 import Pagenation from '@/components/Pagenation'
 import CategoryButton from '@/components/CategoryButton'
 import SortItem from '@/components/SortItem'
 const ShopPage = () => {
   const [isActive, setIsActive] = useState(false)
-  const [searchParams] = useSearchParams()
+  const [searchParams, setSearchParams] = useSearchParams()
   const initProductData = useLoaderData()
-  const navigate = useNavigate()
   const { products, per_page } = initProductData
   const data = products.data
   const sortCase = searchParams.get('_sort')
@@ -21,7 +20,8 @@ const ShopPage = () => {
     params.set('_page', 1)
     params.set('_per_page', per_page)
     category ? params.set('category', category) : params.delete('category')
-    navigate(`/shop/?${params}`)
+    params.set('_sort', 'id') // sort 초기화
+    setSearchParams(params)
   }
 
   const handleSort = sortOption => {
@@ -29,7 +29,7 @@ const ShopPage = () => {
     params.set('_page', 1)
     params.set('_sort', sortOption)
     setIsActive(false)
-    navigate(`/shop/?${params}`)
+    setSearchParams(params)
   }
 
   const sortTextMap = {
