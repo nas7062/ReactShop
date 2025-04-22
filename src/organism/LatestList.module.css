@@ -12,7 +12,7 @@
   gap: var(--fs20);
 }
 
-    .more {
+.more {
   font-size: var(--fs20);
   transition: color 0.3;
 }
