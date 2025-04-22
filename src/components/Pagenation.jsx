@@ -1,37 +1,29 @@
 import React from 'react'
 import styles from './Pagenation.module.css'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 const Pagenation = ({ data }) => {
-  const [searchParams] = useSearchParams()
+  const [searchParams, setSearchParmas] = useSearchParams()
   const params = new URLSearchParams(searchParams)
-  const navigate = useNavigate()
-  const { last, first, prev, next, pages, items } = data.products
+  const { last, first, prev, next, pages } = data.products
   const currentPage = Number(params.get('_page') || 1)
-  console.log(data.products)
 
   const handlePageChange = page => {
     const params = new URLSearchParams(searchParams)
     params.set('_page', page)
-    navigate(`/shop/?${params}`)
+    setSearchParmas(params)
   }
 
   const getPageNumber = () => {
     const maxPageNumber = 10
     // 전체 페이지가  최대 페이지 보다 작으면 모든 페이지 보여줌
     if (pages <= maxPageNumber) {
-      return Array.from({ length: maxPageNumber }, (_, i) => i + 1)
+      return Array.from({ length: pages }, (_, i) => i + 1)
     }
-
     // 페이지가 많을 경우 현재 페이지를 기준으로 하여 주변 번호 생성
     // 예) 현재 페이지 15 => 10~20 페이지 보여줘야함.
-    let startPage = Math.max(1, Math.floor(currentPage - maxPageNumber / 2))
-    let endPage = Math.max(1, Math.floor(pages, startPage + maxPageNumber / 2))
-
-    // endPage가 pages 보다 작으면 StartPage 조정
-    if (endPage > pages) {
-      endPage = pages
-      startPage = Math.max(1, endPage - maxPageNumber + 1)
-    }
+    let startPage = Math.max(1, currentPage - Math.floor(maxPageNumber / 2))
+    let endPage = Math.min(pages, startPage + maxPageNumber - 1)
+    startPage = Math.max(1, endPage - maxPageNumber + 1)
 
     return Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i)
   }
