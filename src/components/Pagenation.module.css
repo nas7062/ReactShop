@@ -10,6 +10,7 @@
   border-radius: var(--fs8);
   padding: var(--fs8) var(--fs12);
   transition: 0.3s;
+  min-width: var(--fs33);
 }
 
 .paginationArea button:hover:not(:disabled),
