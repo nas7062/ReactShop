@@ -30,7 +30,6 @@ export const detailPageLoader = async info => {
 }
 
 export const shopPageLoader = async ({ request }) => {
-  console.log(request.url)
   const url = new URL(request.url)
   const page = url.searchParams.get('_page') || 1
   const per_page = url.searchParams.get('_per_page') || 12
