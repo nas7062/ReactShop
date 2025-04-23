@@ -1,5 +1,4 @@
 .hd {
-  background: #ffffff;
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
   padding: var(--fs16) 0;
   position: fixed;
@@ -21,8 +20,7 @@
   align-items: center;
   gap: var(--fs33);
 }
-.gnb > * {
-}
+
 .gnb nav,
 .gnb .icon {
   display: flex;
@@ -67,16 +65,14 @@
 @media (max-width: 1100px) {
   .gnb {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: fixed;
     width: 70%;
     height: 100%;
-    border: 2px solid red;
     top: 0;
     right: -100%;
     background-color: white;
-    flex-direction: column;
-    /* padding-top: 200px; */
-    justify-content: center;
     transition: 0.3s;
   }
   .gnb.on {
@@ -98,6 +94,4 @@
     position: relative;
     z-index: 10;
   }
-}
-@media (max-width: 600px) {
 }

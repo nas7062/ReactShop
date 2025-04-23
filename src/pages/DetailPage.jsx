@@ -38,7 +38,7 @@ const DetailPage = () => {
   }
   return (
     <main>
-      <h2>DetailPage</h2>
+      <h2 className="sr-only">DetailPage</h2>
       <div className={styles.container}>
         <div className={styles.imgWrap}>
           <img src={`/public/img/${product.img}`} alt={product.title} />

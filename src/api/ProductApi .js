@@ -20,6 +20,7 @@ export const getProductById = async id => {
     throw error
   }
 }
+
 export const getProductByCategory = async (category, limit = 10) => {
   try {
     const response = await axios.get(`/api/products/`, {

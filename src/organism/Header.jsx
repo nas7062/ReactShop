@@ -26,7 +26,7 @@ const Header = () => {
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [])
+  }, [handleResize])
 
   return (
     <header className={css.hd}>
