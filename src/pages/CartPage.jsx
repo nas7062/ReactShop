@@ -4,8 +4,8 @@ import styles from './CartPage.module.css'
 import { formmatCurrency } from '@/utils/features'
 import { removeFromCart, updateCartItemCout } from '@/api/cartApi'
 const CartPage = () => {
-  const carItems = useLoaderData()
-  const [items, setItems] = useState(Array.isArray(carItems) ? carItems : [])
+  const cartItems = useLoaderData()
+  const [items, setItems] = useState(Array.isArray(cartItems) ? cartItems : [])
 
   const totalCount = items.reduce((acc, cur) => acc + cur.count, 0)
   const totalPrice = items.reduce(
@@ -32,7 +32,6 @@ const CartPage = () => {
       removeFromCart(id)
     } else return
   }
-  console.log(carItems)
 
   return (
     <main>

@@ -16,7 +16,6 @@ const ShopPage = () => {
 
   const handleCategoryFilter = category => {
     const params = new URLSearchParams(searchParams) // 현재 파라미터 정보 유지
-    console.log(params)
     params.set('_page', 1)
     params.set('_per_page', per_page)
     category ? params.set('category', category) : params.delete('category')
