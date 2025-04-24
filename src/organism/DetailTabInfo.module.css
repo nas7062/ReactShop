@@ -10,7 +10,10 @@
   transition: 0.3s;
 }
 
-.tabBtn button:hover,
+.tabBtn button:hover {
+  border-color: var(--dark-colors-light-gray-dark);
+}
+
 .tabBtn button:focus,
 .tabBtn button.active {
   border-color: var(--dark-colors-black-dark);

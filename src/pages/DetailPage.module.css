@@ -6,18 +6,18 @@ main > * {
   margin-bottom: var(--fs33);
 }
 
-.imgWrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .imgWrap {
   width: calc(55% - var(--fs16));
   border-radius: var(--fs16);
   overflow: hidden;
   box-shadow: 0 0 5px black;
   position: relative;
+}
+
+.imgWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .infoWrap {
@@ -88,30 +88,6 @@ main > * {
   display: inline-block;
   padding: var(--fs8) var(--fs16);
   font-size: var(--fs20);
-}
-
-.tabList {
-  display: flex;
-  gap: var(--fs33);
-}
-.active {
-  position: relative;
-  height: 50px;
-}
-.active::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  border: 1px solid gray;
-}
-
-.similarList {
-  display: grid;
-  gap: var(--fs33);
-  overflow: hidden;
-  grid-template-columns: repeat(3, 1fr);
 }
 
 @media (max-width: 600px) {

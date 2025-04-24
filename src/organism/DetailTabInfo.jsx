@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './DetailTabInfo.module.css'
 const DetailTabInfo = () => {
   const [activeTab, setActiveTab] = useState(0)
-  const tabTitle = ['메뉴1', '메뉴2', '메뉴3']
+  const tabTitle = ['Descript', 'Additional', 'Review']
   return (
     <>
       <div className={styles.tabBtn}>
