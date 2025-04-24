@@ -5,6 +5,7 @@ import NotFound from './pages/NotFound'
 import DetailPage from './pages/DetailPage'
 import { detailPageLoader, shopPageLoader } from './loaders/productsLoader'
 import { cartPageLoader } from './loaders/cartsLoader'
+import TodoPage from './pages/TodoPage'
 
 const MainPage = lazy(() => import('./pages/MainPage'))
 const AboutPage = lazy(() => import('./pages/AboutPage'))
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       { path: '/shop', element: <ShopPage />, loader: shopPageLoader },
       { path: '/about', element: <AboutPage /> },
       { path: '/blog', element: <BlogPage /> },
+      { path: '/todo', element: <TodoPage /> },
       { path: '/cart', element: <CartPage />, loader: cartPageLoader },
       {
         path: '/detail/:productId',

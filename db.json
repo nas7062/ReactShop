@@ -1034,5 +1034,31 @@
       "discount": 17,
       "count": 1
     }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "todosDesc": "할일1",
+      "createAt": "2025.04.24",
+      "isDone": false
+    },
+    {
+      "id": 2,
+      "todosDesc": "할일2",
+      "createAt": "2025.04.25",
+      "isDone": false
+    },
+    {
+      "id": 3,
+      "todosDesc": "할일3",
+      "createAt": "2025.04.24",
+      "isDone": false
+    },
+    {
+      "id": 4,
+      "todosDesc": "할일4",
+      "createAt": "2025.04.25",
+      "isDone": false
+    }
   ]
 }
