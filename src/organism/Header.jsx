@@ -26,7 +26,7 @@ const Header = () => {
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [])
+  }, [handleResize])
 
   return (
     <header className={css.hd}>
@@ -46,6 +46,7 @@ const Header = () => {
             <CustomIconLink to={'/search'} icon={'bi-search'} />
             <CustomIconLink to={'/mypage'} icon={'bi-person-circle'} />
             <CustomIconLink to={'/cart'} icon={'bi-basket'} />
+            <i className="bi bi-sun"></i>
           </div>
         </div>
         <i className={`${css.ham} bi bi-list`} title="전체메뉴 보기버튼" onClick={addClassOn}></i>
