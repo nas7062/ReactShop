@@ -1,11 +1,18 @@
 import { getTodosData } from '@/api/todosApi'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-export const fetchTodos = createAsyncThunk('todos/fetchTodos', async () => {
-  const response = await getTodosData()
-  return response
-})
+export const fetchTodos = createAsyncThunk('todos/fetchTodos', async (_, { rejectWithValue }) => {
+  try {
+    const response = await getTodosData()
 
+    if (!response) {
+      return rejectWithValue({ message: '서버 응답 실패' })
+    }
+    return response
+  } catch (error) {
+    return rejectWithValue({ message: error.message })
+  }
+})
 export const todoSlice = createSlice({
   name: 'todos',
   initialState: {
